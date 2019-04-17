@@ -1,0 +1,11 @@
+html {
+    background: linear-gradient(white, rgb(233, 252, 255));
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 25px;
+}
+
+#root {
+    margin: auto;
+    width: 200px;   
+}
