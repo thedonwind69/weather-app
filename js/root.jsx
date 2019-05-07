@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchBar from './search_bar';
+import Weather from './weather';
 
 class Root extends React.Component {
 
@@ -11,8 +11,8 @@ class Root extends React.Component {
     render () {
         return (
             <div>
-                <h1>WEATHER APP</h1>
-                <SearchBar />
+                <h1>WEATHER APP BITCH</h1>
+                <Weather />
             </div>
         )
     }
