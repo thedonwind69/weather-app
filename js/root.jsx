@@ -11,7 +11,7 @@ class Root extends React.Component {
     render () {
         return (
             <div>
-                <h1>WEATHER APP BITCH</h1>
+                <h1>Here's the weather!</h1>
                 <Weather />
             </div>
         )
