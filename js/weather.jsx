@@ -33,7 +33,7 @@ class Weather extends React.Component {
                     return response.json();
                 })
                 .then(data => {
-                    const {temperature, summary} = data.currently;
+                    const {temperature, summary, icon} = data.currently;
                     this.setState({
                         temperature: temperature,
                         description: summary,
@@ -45,12 +45,14 @@ class Weather extends React.Component {
         this.setWeatherIcons();
     }
 
-    setWeatherIcons () {
-
+    setWeatherIcons (icon, iconId) {
+        const skycons = new skycons({color: "white"});
+        const currentIcon = icon.replace(/-/g, "_").toUpperCase();
+        skycons.play();
+        return skycons.set(iconID,);
     }
 
     render () {
-        
         return (
             <div>
                 <h1>{this.state.temperature}</h1>
