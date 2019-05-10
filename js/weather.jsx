@@ -39,17 +39,19 @@ class Weather extends React.Component {
                         description: summary,
                         locationTimezone: data.timezone,
                     });
+                    const icon1 = ReactDOM.findDOMNode(this.refs.icon1);
+                    this.setWeatherIcons(icon, icon1);
                 });
             });
         }
-        this.setWeatherIcons();
+        
     }
 
     setWeatherIcons (icon, iconId) {
-        const skycons = new skycons({color: "white"});
+        const skycons = new Skycons({color: "white"});
         const currentIcon = icon.replace(/-/g, "_").toUpperCase();
         skycons.play();
-        return skycons.set(iconID,);
+        return skycons.set(iconId, Skycons[currentIcon]);
     }
 
     render () {
@@ -58,6 +60,9 @@ class Weather extends React.Component {
                 <h1>{this.state.temperature}</h1>
                 <h1>{this.state.description}</h1>
                 <h1>{this.state.locationTimezone}</h1>
+
+                <canvas ref="icon1" width="128" height="128"></canvas>
+
             </div>
         )
     }
