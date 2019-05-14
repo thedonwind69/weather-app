@@ -10,6 +10,7 @@ class Weather extends React.Component {
             description: null,
             temperature: null,
             locationTimezone: null,
+            currentPosition: null,
         }
 
     }
@@ -25,7 +26,6 @@ class Weather extends React.Component {
             navigator.geolocation.getCurrentPosition((position) => {
                 long = position.coords.longitude;
                 lat = position.coords.latitude;
-
             const proxy = "https://cors-anywhere.herokuapp.com/";
             const api = `${proxy}https://api.darksky.net/forecast/b789c0a90dae4db90bf5f9dc88f5f3c1/${lat},${long}`;
             
@@ -57,15 +57,12 @@ class Weather extends React.Component {
     }
 
     render () {
-
         return (
             <div>
-                <h1>{this.state.temperature}</h1>
+                <h1>{this.state.temperature}F</h1>
                 <h1>{this.state.description}</h1>
                 <h1>{this.state.locationTimezone}</h1>
-
                 <canvas ref="icon1" width="128" height="128"></canvas>
-
             </div>
         )
     }
