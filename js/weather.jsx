@@ -6,6 +6,7 @@ class Weather extends React.Component {
     constructor (props) {
         super(props);
         this.state = {
+            allData: null,
             description: null,
             temperature: null,
             locationTimezone: null,
@@ -35,6 +36,7 @@ class Weather extends React.Component {
                 .then(data => {
                     const {temperature, summary, icon} = data.currently;
                     this.setState({
+                        allData: data,
                         temperature: temperature,
                         description: summary,
                         locationTimezone: data.timezone,
@@ -55,6 +57,7 @@ class Weather extends React.Component {
     }
 
     render () {
+
         return (
             <div>
                 <h1>{this.state.temperature}</h1>
